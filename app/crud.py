@@ -7,7 +7,7 @@ from typing import Optional
 def create_user(db: Session, user: schemas.UserCreate) -> models.User:
     db_user = models.User(
         username=user.username,
-        hashed_password=user.password  # Hash password in production!
+        hashed_password=user.password  
     )
     db.add(db_user)
     db.commit()
